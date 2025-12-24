@@ -1,0 +1,401 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.heart-animation {
+  position: absolute;
+  z-index: 1000;
+  transition: all 1s ease-in-out;
+}
+
+body {
+  font-family: sans-serif;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, and Opera */
+}
+header {
+  /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05); */
+  color: #212529;
+}
+
+.lds-ripple {
+  display: flex;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #ff5757;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+.nav-area {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 25px;
+  color: inherit;
+  margin-right: 20px;
+}
+
+.menus {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.menu-items {
+  position: relative;
+}
+
+.menu-items a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px;
+}
+
+.menu-items button {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+button span {
+  margin-left: 3px;
+}
+
+.menu-items > a, .menu-items button {
+  text-align: left;
+}
+
+.menu-items a:hover,
+.menu-items button:hover {
+  background-color: #f2f2f2;
+}
+
+.arrow::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.28em;
+  vertical-align: 0.09em;
+  border-top: 0.42em solid;
+  border-right: 0.32em solid transparent;
+  border-left: 0.32em solid transparent;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  left: auto;
+  box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
+    0 4px 6px -2px rgba(71, 63, 79, 0.16);
+  font-size: 0.875rem;
+  z-index: 9999;
+  min-width: 10rem;
+  padding: 0.5rem 0.5rem;
+  list-style: none;
+  font-family: 400;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+.dropdown .dropdown-submenu {
+  position: absolute;
+  left: 100%;
+  top: -7px;
+  font-family: 400;
+
+}
+
+/* content */
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 20px;
+}
+
+.content h2 {
+  margin-bottom: 1rem;
+}
+
+.content a {
+  color: #cc3852;
+  margin-right: 10px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #efecf3;
+  border-radius: 0.75rem;
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.card-hover {
+  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+.deepShadow {
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12),
+  0 0.25rem 1rem rgba(31, 27, 45, 0.12);
+}
+
+.shadow-2 {
+  box-shadow: 0 .125rem .125rem -0.125rem rgba(31,27,45,.08),0 .25rem .75rem rgba(31,27,45,.08) ;
+}
+
+:hover .card {
+  box-shadow: 0 .125rem .125rem -0.125rem rgba(31,27,45,.08),0 .25rem .75rem rgba(31,27,45,.08) ;
+}
+/* creating the trapezium shape*/
+.trapezium {
+	height: 0;
+	width: 150px;
+	border-top: 80px solid #FF5757;
+	border-left: 0px solid transparent;
+	border-right: 100px solid transparent;
+}
+
+.bannerBg{
+  background-blend-mode: overlay;
+  background: rgb(52,9,9);
+background: rgba(0, 0, 0, 0.45);
+}
+
+#livingCost h2{
+  color: #1f1b2d;
+  font-size: 1.3rem;
+}
+
+#livingCost li{
+ list-style-type: disc;
+ margin: 0 2rem;
+}
+
+#aboutCountry h2{
+  color: #1f1b2d;
+  font-size: 1.3rem;
+}
+
+#aboutCountry li{
+ list-style-type: disc;
+ margin: 0 1rem;
+}
+
+#requirements h2{
+  color: #FF5757;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+#requirements h3{
+  color: #FF5757;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+#requirements li{
+  list-style-type: disc;
+  margin: 0rem 2rem;
+ }
+
+ #requirements ul{
+  margin:  0rem;
+ }
+
+ #programmes h2{
+  color: #FF5757;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+#programmes h3{
+  color: #FF5757 !important;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+#programmes ul li{
+  list-style-type: disc;
+  margin: 0rem 2rem;
+ }
+ #programmes a{
+  color: #FF5757;
+  text-decoration: underline;
+ }
+
+ #programmes strong{
+  color: #FF5757;
+ }
+
+#others ul li{
+  list-style-type: disc;
+  margin: 0rem 2rem;
+ }
+
+ #finance ul li{
+  list-style-type: disc;
+  margin: 0rem 2rem;
+ }
+
+ #finance h3{
+  color: #FF5757;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+ #finance a{
+  color: #FF5757;
+  text-decoration: underline;
+ }
+
+ #scholarship a{
+  color: #FF5757;
+  text-decoration: underline;
+ }
+
+ #requirements a{
+  color: #FF5757;
+  text-decoration: underline;
+ }
+
+ .currency-select {
+  background: none;
+  border: none;
+  color: #ff5757;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.currency-select option {
+  width: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#userCard {
+  border-radius: 0.75rem;
+}
+
+#course_overview ul{
+  list-style: disc;
+  margin-left: 3rem;
+
+ 
+}
+
+/* styles.css */
+.myStyle ul {
+  list-style-type: disc;
+  margin-left: 3rem;
+  margin-top: 1rem;
+}
+
+.two-line-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines you want */
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.one-line-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Number of lines you want */
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Add this CSS to your stylesheet */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px; /* Adjust the width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color of the scrollbar thumb on hover */
+}
